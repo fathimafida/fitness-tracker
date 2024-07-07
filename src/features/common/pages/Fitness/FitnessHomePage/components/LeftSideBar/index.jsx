@@ -1,3 +1,9 @@
+import { BiSolidDashboard } from "react-icons/bi";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { ImPower } from "react-icons/im";
+import { IoMdFitness } from "react-icons/io";
+import { RiRunLine } from "react-icons/ri";
+import { SlCalender } from "react-icons/sl";
 
 
 const LeftSideBar = () => {
@@ -10,19 +16,26 @@ const LeftSideBar = () => {
         <div className="flex flex-row gap-2">
           <h1 className="text-xl font-bold">FitPower</h1>
         </div>
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center gap-2">
+          <BiSolidDashboard />
+
           <h1>Dashboard</h1>
         </div>
         <div className="flex flex-col items-center ">
+          <GiWeightLiftingUp />
+          <IoMdFitness />
           <h1>Excercise</h1>
         </div>
         <div className="flex flex-col items-center ">
+          <RiRunLine />
           <h1>Run Tracker</h1>
         </div>
         <div className="flex flex-col items-center ">
+          <SlCalender />
           <h1>Calender</h1>
         </div>
         <div className="flex flex-col items-center ">
+          <ImPower/>
           <h1>Fitness Goals</h1>
         </div>
       </div>
