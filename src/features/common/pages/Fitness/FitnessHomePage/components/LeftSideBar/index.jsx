@@ -1,5 +1,4 @@
 import { BiSolidDashboard } from "react-icons/bi";
-import { GiWeightLiftingUp } from "react-icons/gi";
 import { ImPower } from "react-icons/im";
 import { IoMdFitness } from "react-icons/io";
 import { RiRunLine } from "react-icons/ri";
@@ -9,11 +8,11 @@ import { SlCalender } from "react-icons/sl";
 const LeftSideBar = () => {
   return (
     <div
-      className=" fixed left-0 w-[13%] left-section"
+      className=" fixed left-0 w-[15 %] left-section"
       style={{ borderRight: "1px solid #E4E4E4", minHeight: "100vh" }}
     >
       <div className="flex flex-col p-4">
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 items-center">
           <h1 className="text-xl font-bold">FitPower</h1>
         </div>
         <div className="py-6 font-semibold">

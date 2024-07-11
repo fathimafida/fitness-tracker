@@ -7,23 +7,20 @@ import { MdEmail } from 'react-icons/md';
 const Header = () => {
   return (
     <div
-      className=" flex  items-center   py-4 sticky  bg-white top-0"
+      className=" flex  items-center  py-2  sticky  bg-white top-0"
       style={{ borderBottom: "1px solid #E4E4E4" }}
     >
-      <div className="flex flex-row items-center justify-between">
-        <div className='px-6'>
-        
-          <h1 className="text-xl font-bold">Dashboard</h1>
-        </div>
+      <div className="flex flex-row items-center justify-between w-full px-6">
+        <h1 className="text-xl font-bold">Dashboard</h1>
 
-        <div className="flex flex-row gap-2 ">
+        <div className="flex flex-row gap-3 ">
           <Button isIconOnly>
             <MdEmail />
           </Button>
           <Button isIconOnly>
             <IoNotifications />
           </Button>
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             <img
               className="h-10 w-9 object-cover rounded-md"
               src="https://t4.ftcdn.net/jpg/01/85/04/83/360_F_185048377_F8giSZbUurG1Rpgn9rs4aIzhG17bkKCp.jpg"
