@@ -2,11 +2,12 @@ import { Button,  CircularProgress, } from "@nextui-org/react";
 import Header from "./components/Header";
 import LeftSideBar from "./components/LeftSideBar";
 
-import { MdOutlineAutoGraph } from "react-icons/md";
+import { MdOutlineAutoGraph, MdOutlineGraphicEq } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
-import SliderImg from '../../../../../assets/slider.png'
 
+import VerticalBarGraph from "@chartiful/react-vertical-bar-graph";
+import { IoMdArrowDropdown } from "react-icons/io";
 const FitnessHomePage = () => {
   return (
     <div className="flex">
@@ -141,24 +142,107 @@ const FitnessHomePage = () => {
               <h1 className="text-sm font-bold">Daily Goals</h1>
               <CircularProgress
                 classNames={{
-                
                   svg: "w-32 h-32 drop-shadow-md",
                   indicator: "stroke-purple-600",
                   track: "stroke-slate-100",
                   value: "text-sm font-semibold text-black",
-
                 }}
                 value={78}
                 strokeWidth={3}
                 showValueLabel={true}
-                
               />
               <p className="font-bold"> 100/140KCAL</p>
               <h1>You have reached 78% of your goal this month</h1>
             </div>
             <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
-              Set Fitness Goals{" "}
+              Set Fitness Goals
               <FaArrowRightLong className="text-indigo-700 " />
+            </Button>
+          </div>
+        </div>
+        <div className="flex   gap-3">
+          <div className="flex flex-col shadow-sm border rounded-md  border-grey-100 gap-2  p-3">
+            <div className="flex flex-row justify-between">
+              <div className="flex gap-2">
+                <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-blue-700 to-blue-600">
+                  <MdOutlineGraphicEq className="text-white" />
+                </div>
+                <div className="text-sm font-bold">Workout Statistic
+  
+                </div>
+              </div>
+              <Button variant="bordered">
+                This Week <IoMdArrowDropdown />
+              </Button>
+            </div>
+            <VerticalBarGraph
+              color="blue"
+              data={[20, 45, 28, 80, 99, 43, 50]}
+              labels={["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]}
+              width={500}
+              height={300}
+              barRadius={5}
+              barWidthPercentage={0.65}
+              baseConfig={{
+                // hasXAxisBackgroundLines: false,
+                xAxisLabelStyle: {
+                  position: "left",
+                  prefix: "$",
+                },
+              }}
+              style={{
+                paddingVertical: 10,
+              }}
+            />
+          </div>
+
+          <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
+            <div className="flex flex-row">
+              <div className="flex flex-col ">
+                <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
+                  <MdOutlineAutoGraph className="text-white" />
+                </div>
+                <p className="text-sm ">Progress</p>
+                <h1 className="text-lg font-bold">Lower Body</h1>
+
+                <div className="flex items-center gap-2">
+                  <div className=" bg-blue-200 w-fit rounded-full p-1">
+                    <p className="text-sm text-blue-600 ">Cardio</p>
+                  </div>
+                  <FaClock className="text-slate-600" />
+                  <p className="text-sm text-slate-600 mr-3 ">15 hours</p>
+                </div>
+              </div>
+              <div className="w-[200px]  border-t-2 border-l-2 p-2 border-grey-200 rounded-2xl ">
+                <div className="w-[180px]  border-t-2 border-l-2 p-2 rounded-xl">
+                  <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-lg">
+                    <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-md">
+                      <div className=" w-[80px] h-[80px]  bg-gradient-to-tr rounded-md from-purple-100 to-purple-300">
+                        <div className="flex items-center justify-center w-full h-full">
+                          <CircularProgress
+                            size="lg"
+                            classNames={{
+                              svg: "w-11 h-11 drop-shadow-md",
+                              indicator: "stroke-purple-600",
+                              track: "stroke-white/30",
+                              value: "text-sm font-semibold text-white",
+                            }}
+                            value={60}
+                            strokeWidth={3}
+                            showValueLabel={true}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
+              Continue the exercise
+              <div className=" flex  items-center  gap-3">
+                <FaArrowRightLong className="text-indigo-700" />
+              </div>
             </Button>
           </div>
         </div>
