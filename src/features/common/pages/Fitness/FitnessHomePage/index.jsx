@@ -1,10 +1,11 @@
-import { Button,  CircularProgress, Slider } from "@nextui-org/react";
+import { Button,  CircularProgress, } from "@nextui-org/react";
 import Header from "./components/Header";
 import LeftSideBar from "./components/LeftSideBar";
 
 import { MdOutlineAutoGraph } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import SliderImg from '../../../../../assets/slider.png'
 
 const FitnessHomePage = () => {
   return (
@@ -23,7 +24,7 @@ const FitnessHomePage = () => {
                 Good morning, Today is the best to start Exercise
               </h1>
               <div className="flex   gap-3">
-                <div className="flex flex-col shadow-md border  border-grey-100 gap-2  p-3">
+                <div className="flex flex-col shadow-sm border rounded-md  border-grey-100 gap-2  p-3">
                   <div className="flex flex-row  ">
                     <div className="flex flex-col ">
                       <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-blue-700 to-blue-600">
@@ -46,7 +47,7 @@ const FitnessHomePage = () => {
                         <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-lg">
                           <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-md">
                             <div className=" w-[80px] h-[80px]  bg-gradient-to-tr rounded-md from-indigo-100 to-indigo-300">
-                              <div className="flex align-items-center justify-center">
+                              <div className="flex items-center justify-center w-full h-full">
                                 <CircularProgress
                                   size="lg"
                                   classNames={{
@@ -66,7 +67,7 @@ const FitnessHomePage = () => {
                       </div>
                     </div>
                   </div>
-                  <Button className="bg-indigo-100 text-lg mt-2 hover:bg-indigo-200">
+                  <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
                     Continue the exercise
                     <div className=" flex  items-center  gap-3">
                       <FaArrowRightLong className="text-indigo-700" />
@@ -74,7 +75,7 @@ const FitnessHomePage = () => {
                   </Button>
                 </div>
 
-                <div className="flex w-fit flex-col shadow-md border border-grey-100 gap-2  p-3 ">
+                <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
                   <div className="flex flex-row">
                     <div className="flex flex-col ">
                       <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
@@ -96,7 +97,7 @@ const FitnessHomePage = () => {
                         <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-lg">
                           <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-md">
                             <div className=" w-[80px] h-[80px]  bg-gradient-to-tr rounded-md from-purple-100 to-purple-300">
-                              <div className="flex align-items-center justify-center">
+                              <div className="flex items-center justify-center w-full h-full">
                                 <CircularProgress
                                   size="lg"
                                   classNames={{
@@ -116,7 +117,7 @@ const FitnessHomePage = () => {
                       </div>
                     </div>
                   </div>
-                  <Button className="bg-indigo-100 text-lg mt-2 hover:bg-indigo-200">
+                  <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
                     Continue the exercise
                     <div className=" flex  items-center  gap-3">
                       <FaArrowRightLong className="text-indigo-700" />
@@ -131,12 +132,34 @@ const FitnessHomePage = () => {
             </div> */}
           </div>
           <div className="flex flex-col flex-1  p-2 shadow-md border rounded">
-            <div className="text-center ">
-              <span>Set your </span>
-              <span className="font-semibold ">Fitness Goals</span>
-              <p>For the quality your health</p>
+            <div className="text-center mb-2 ">
+              <span className="text-md ">Set your </span>
+              <span className="font-bold  text-lg">Fitness Goals</span>
+              <p className="text-md ">For the quality your health</p>
             </div>
-            <Slider label="Daily Goal" step={0.01} />
+            <div className="flex flex-col w- justify-center border rounded-lg shadow-sm items-center">
+              <h1 className="text-sm font-bold">Daily Goals</h1>
+              <CircularProgress
+                classNames={{
+                
+                  svg: "w-32 h-32 drop-shadow-md",
+                  indicator: "stroke-purple-600",
+                  track: "stroke-slate-100",
+                  value: "text-sm font-semibold text-black",
+
+                }}
+                value={78}
+                strokeWidth={3}
+                showValueLabel={true}
+                
+              />
+              <p className="font-bold"> 100/140KCAL</p>
+              <h1>You have reached 78% of your goal this month</h1>
+            </div>
+            <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
+              Set Fitness Goals{" "}
+              <FaArrowRightLong className="text-indigo-700 " />
+            </Button>
           </div>
         </div>
       </div>
