@@ -1,6 +1,6 @@
-import { Button,  CircularProgress, } from "@nextui-org/react";
-import Header from "./components/Header";
-import LeftSideBar from "./components/LeftSideBar";
+import { Button,  Checkbox,  CheckboxGroup,  CircularProgress, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, } from "@nextui-org/react";
+import Header from "../../common/components/Header";
+import LeftSideBar from "../../common/LeftSideBar";
 
 import { MdOutlineAutoGraph, MdOutlineGraphicEq } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
@@ -8,11 +8,16 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 import VerticalBarGraph from "@chartiful/react-vertical-bar-graph";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const FitnessHomePage = () => {
+  const [isOpen ,onOpenChange] = useState(false)
+  const navigate = useNavigate()
   return (
     <div className="flex">
       <LeftSideBar />
-      <div className="flex flex-col flex-1 ml-[11%]">
+      <div className="flex flex-col flex-1 ml-[14%]">
         <Header />
         <div className="flex flex-row gap-4 p-2">
           <div className="flex  p-4 border w-fit border-grey-100 shadow-md rounded">
@@ -68,15 +73,18 @@ const FitnessHomePage = () => {
                       </div>
                     </div>
                   </div>
-                  <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
+                  <Button onClick={
+                    () => navigate('/upperbody')
+                  } className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
                     Continue the exercise
+                    
                     <div className=" flex  items-center  gap-3">
                       <FaArrowRightLong className="text-indigo-700" />
                     </div>
                   </Button>
                 </div>
 
-                <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
+                <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-2 ">
                   <div className="flex flex-row">
                     <div className="flex flex-col ">
                       <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
@@ -138,7 +146,7 @@ const FitnessHomePage = () => {
               <span className="font-bold  text-lg">Fitness Goals</span>
               <p className="text-md ">For the quality your health</p>
             </div>
-            <div className="flex flex-col w- justify-center border rounded-lg shadow-sm items-center">
+            <div className="flex flex-col w- justify-center border rounded-lg shadow-sm items-center p-1">
               <h1 className="text-sm font-bold">Daily Goals</h1>
               <CircularProgress
                 classNames={{
@@ -154,8 +162,11 @@ const FitnessHomePage = () => {
               <p className="font-bold"> 100/140KCAL</p>
               <h1>You have reached 78% of your goal this month</h1>
             </div>
-            <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
+            <Button 
+            onClick={() => onOpenChange(true)}
+            className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
               Set Fitness Goals
+              
               <FaArrowRightLong className="text-indigo-700 " />
             </Button>
           </div>
@@ -247,6 +258,36 @@ const FitnessHomePage = () => {
           </div>
         </div>
       </div>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Select Your Goals</ModalHeader>
+              <ModalBody>
+              <CheckboxGroup
+      
+      defaultValue={["Loss Weight","Gain Muscle" ]}
+    >
+      <Checkbox value="loss weight">Loss Weight </Checkbox>
+      <Checkbox value="get fitter">Get Fitter</Checkbox>
+      <Checkbox value="reduce belly fat">Reduce Belly Fat</Checkbox>
+      <Checkbox  value="gain muscle">Gain Muscle </Checkbox>
+      <Checkbox value="get healthy">Get Healthy</Checkbox>
+    </CheckboxGroup>
+
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Done
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

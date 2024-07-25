@@ -1,0 +1,41 @@
+{
+    "exercise":[
+        {
+            "id": 1,
+            "title": "Running",
+            "description": "Run for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        },
+        {
+            "id": 2,
+            "title": "Cycling",
+            "description": "Cycl for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        },
+        {
+            "id": 3,
+            "title": "Swimming",
+            "description": "Swim for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        },
+        {
+            "id": 4,
+            "title": "Climbing",
+            "description": "Climb for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        },
+        {
+            "id": 5,
+            "title": "Hiking",
+            "description": "Hike for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        },
+        {
+            "id": 6,
+            "title": "Yoga",
+            "description": "Yoga for 30 minutes",
+            "image": "https://i.ibb.co/0FwqX7Q/running.png"
+        }
+    ]
+
+}
