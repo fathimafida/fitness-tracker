@@ -126,7 +126,11 @@ const FitnessHomePage = () => {
                       </div>
                     </div>
                   </div>
-                  <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
+                  <Button
+                  onClick={
+                    () => navigate('/lowerbody')
+                  }
+                  className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
                     Continue the exercise
                     <div className=" flex  items-center  gap-3">
                       <FaArrowRightLong className="text-indigo-700" />
@@ -210,21 +214,26 @@ const FitnessHomePage = () => {
           <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
             <div className="flex flex-row">
               <div className="flex flex-col ">
-                <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
+               <div className="flex justify-between">
+               <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
                   <MdOutlineAutoGraph className="text-white" />
                 </div>
+                <Button variant="bordered">
+                  View Details 
+                </Button>
+               </div>
                 <p className="text-sm ">Progress</p>
                 <h1 className="text-lg font-bold">Lower Body</h1>
 
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <div className=" bg-blue-200 w-fit rounded-full p-1">
                     <p className="text-sm text-blue-600 ">Cardio</p>
                   </div>
                   <FaClock className="text-slate-600" />
                   <p className="text-sm text-slate-600 mr-3 ">15 hours</p>
-                </div>
+                </div> */}
               </div>
-              <div className="w-[200px]  border-t-2 border-l-2 p-2 border-grey-200 rounded-2xl ">
+              {/* <div className="w-[200px]  border-t-2 border-l-2 p-2 border-grey-200 rounded-2xl ">
                 <div className="w-[180px]  border-t-2 border-l-2 p-2 rounded-xl">
                   <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-lg">
                     <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-md">
@@ -247,7 +256,7 @@ const FitnessHomePage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
               Continue the exercise
