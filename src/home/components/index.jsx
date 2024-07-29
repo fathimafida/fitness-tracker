@@ -1,4 +1,4 @@
-import { Button,  Checkbox,  CheckboxGroup,  CircularProgress, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, } from "@nextui-org/react";
+import { Button,  Checkbox,  CheckboxGroup,  CircularProgress, Divider, Image, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, } from "@nextui-org/react";
 import Header from "../../common/components/Header";
 import LeftSideBar from "../../common/LeftSideBar";
 
@@ -177,16 +177,16 @@ const FitnessHomePage = () => {
         </div>
         <div className="flex   gap-3">
           <div className="flex flex-col shadow-sm border rounded-md  border-grey-100 gap-2  p-3">
-            <div className="flex flex-row justify-between">
-              <div className="flex gap-2">
-                <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-blue-700 to-blue-600">
+            <div className="flex flex-row justify-between mb-2">
+              <div className="flex gap-3 items-center ">
+                <div className="bg-gradient-to-t w-fit rounded p-1  from-blue-700 to-blue-600">
                   <MdOutlineGraphicEq className="text-white" />
                 </div>
                 <div className="text-sm font-bold">Workout Statistic
   
                 </div>
               </div>
-              <Button variant="bordered">
+              <Button  variant="bordered">
                 This Week <IoMdArrowDropdown />
               </Button>
             </div>
@@ -211,60 +211,49 @@ const FitnessHomePage = () => {
             />
           </div>
 
-          <div className="flex w-fit flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
-            <div className="flex flex-row">
-              <div className="flex flex-col ">
-               <div className="flex justify-between">
-               <div className="bg-gradient-to-t w-fit rounded p-1 mb-1 from-violet-700 to-violet-600">
-                  <MdOutlineAutoGraph className="text-white" />
+          <div className="flex w-[1/2] flex-col shadow-sm rounded-md border border-grey-100 gap-2  p-3 ">
+            
+              <div className="flex flex-row justify-between mb-2  gap-3 items-center ">
+               <div className="flex gap-2 items-center">
+                 <div className="bg-gradient-to-t w-fit rounded p-1  from-blue-700 to-blue-600">
+                  <MdOutlineGraphicEq className="text-white" />
                 </div>
-                <Button variant="bordered">
-                  View Details 
-                </Button>
+                  <h1 className="text-sm font-bold">Run Activity</h1>
                </div>
-                <p className="text-sm ">Progress</p>
-                <h1 className="text-lg font-bold">Lower Body</h1>
+                  <Button  variant="bordered">
+                    This Week <IoMdArrowDropdown />
+                   </Button>
+          
+               </div>
+              <div className="flex gap-3">
+              <Image src="https://i.ibb.co/0FwqX7Q/running.png">
 
-                {/* <div className="flex items-center gap-2">
-                  <div className=" bg-blue-200 w-fit rounded-full p-1">
-                    <p className="text-sm text-blue-600 ">Cardio</p>
-                  </div>
-                  <FaClock className="text-slate-600" />
-                  <p className="text-sm text-slate-600 mr-3 ">15 hours</p>
-                </div> */}
-              </div>
-              {/* <div className="w-[200px]  border-t-2 border-l-2 p-2 border-grey-200 rounded-2xl ">
-                <div className="w-[180px]  border-t-2 border-l-2 p-2 rounded-xl">
-                  <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-lg">
-                    <div className="w-[100px]  border-t-1 border-l-1 p-2 rounded-md">
-                      <div className=" w-[80px] h-[80px]  bg-gradient-to-tr rounded-md from-purple-100 to-purple-300">
-                        <div className="flex items-center justify-center w-full h-full">
-                          <CircularProgress
-                            size="lg"
-                            classNames={{
-                              svg: "w-11 h-11 drop-shadow-md",
-                              indicator: "stroke-purple-600",
-                              track: "stroke-white/30",
-                              value: "text-sm font-semibold text-white",
-                            }}
-                            value={60}
-                            strokeWidth={3}
-                            showValueLabel={true}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                </Image>
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm font-normal text-gray-500 "> Yesterday,6:30AM-7:30AM</p>
+                  <p className="text-md font-bold  "> Running from alun to alun mall</p>
+                  <p className="text-sm font-normal  ">120 Kcal * 2.0 Km</p>
+                  <Divider className="mb-2 mt-2"/>
+                 <div className="flex justify-between items-center">
+                 <p className="text-sm font-normal text-gray-500"> Total Steps</p>
+                 <h1 className="text-md font-bold ">10.567</h1>
+                 </div>
+                 <div className="flex justify-between items-center">
+                 <p className="text-sm font-normal text-gray-500"> Total Calories</p>
+                 <h1 className="text-md font-bold ">100 Kcal</h1>
+                 </div>
+                 <div className="flex justify-between items-center">
+                 <p className="text-sm font-normal text-gray-500"> Total Time</p>
+                 <h1 className="text-md font-bold ">1,25 hours</h1>
+                 </div>
+                  
+             
                 </div>
-              </div> */}
-            </div>
-            <Button className="bg-indigo-100 text-md mt-2 hover:bg-indigo-200">
-              Continue the exercise
-              <div className=" flex  items-center  gap-3">
-                <FaArrowRightLong className="text-indigo-700" />
               </div>
-            </Button>
-          </div>
+
+           
+            </div>
+
         </div>
       </div>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
